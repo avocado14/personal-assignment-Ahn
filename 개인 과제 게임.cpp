@@ -117,7 +117,7 @@ void angleanimaion() {	//angX 는 실제 x 좌표 angx 는 실제를 구하기�
 		angx = angx + anganispeed;
 		angX = 31 * log(angx + 1);
 	}
-	locateObject(angpointer, scene1, angX + 190, 40);
+	locateObject(angpointer, scene1, angX + 250, 40);
 	stopTimer(angAni);
 	startTimer(angAni);
 	setTimer(angAni, 0.01f);
@@ -290,6 +290,234 @@ void firingrotaition() {
 				setObjectImage(Ball[1], "image/tennisball12.png");
 			}
 		}
+	else if (ballstatus == 4) {
+	if (rotationcache % 12 == 0) {
+		setObjectImage(Ball[1], "image/soccerball1.png");
+	}
+	else if (rotationcache % 12 == 1) {
+		setObjectImage(Ball[1], "image/soccerball2.png");
+	}
+	else if (rotationcache % 12 == 2) {
+		setObjectImage(Ball[1], "image/soccerball3.png");
+	}
+	else if (rotationcache % 12 == 3) {
+		setObjectImage(Ball[1], "image/soccerball4.png");
+	}
+	else if (rotationcache % 12 == 4) {
+		setObjectImage(Ball[1], "image/soccerball5.png");
+	}
+	else if (rotationcache % 12 == 5) {
+		setObjectImage(Ball[1], "image/soccerball6.png");
+	}
+	else if (rotationcache % 12 == 6) {
+		setObjectImage(Ball[1], "image/soccerball7.png");
+	}
+	else if (rotationcache % 12 == 7) {
+		setObjectImage(Ball[1], "image/soccerball8.png");
+	}
+	else if (rotationcache % 12 == 8) {
+		setObjectImage(Ball[1], "image/soccerball9.png");
+	}
+	else if (rotationcache % 12 == 9) {
+		setObjectImage(Ball[1], "image/soccerball10.png");
+	}
+	else if (rotationcache % 12 == 10) {
+		setObjectImage(Ball[1], "image/soccerball11.png");
+	}
+	else if (rotationcache % 12 == 11) {
+		setObjectImage(Ball[1], "image/soccerball12.png");
+	}
+		}
+	else if (ballstatus == 5) {
+	if (rotationcache % 12 == 0) {
+		setObjectImage(Ball[1], "image/vollyball1.png");
+	}
+	else if (rotationcache % 12 == 1) {
+		setObjectImage(Ball[1], "image/vollyball2.png");
+	}
+	else if (rotationcache % 12 == 2) {
+		setObjectImage(Ball[1], "image/vollyball3.png");
+	}
+	else if (rotationcache % 12 == 3) {
+		setObjectImage(Ball[1], "image/vollyball4.png");
+	}
+	else if (rotationcache % 12 == 4) {
+		setObjectImage(Ball[1], "image/vollyball5.png");
+	}
+	else if (rotationcache % 12 == 5) {
+		setObjectImage(Ball[1], "image/vollyball6.png");
+	}
+	else if (rotationcache % 12 == 6) {
+		setObjectImage(Ball[1], "image/vollyball7.png");
+	}
+	else if (rotationcache % 12 == 7) {
+		setObjectImage(Ball[1], "image/vollyball8.png");
+	}
+	else if (rotationcache % 12 == 8) {
+		setObjectImage(Ball[1], "image/vollyball9.png");
+	}
+	else if (rotationcache % 12 == 9) {
+		setObjectImage(Ball[1], "image/vollyball10.png");
+	}
+	else if (rotationcache % 12 == 10) {
+		setObjectImage(Ball[1], "image/vollyball11.png");
+	}
+	else if (rotationcache % 12 == 11) {
+		setObjectImage(Ball[1], "image/vollyball12.png");
+	}
+		}
+	else if (ballstatus == 6) {
+	if (rotationcache % 12 == 0) {
+		setObjectImage(Ball[1], "image/football1.png");
+	}
+	else if (rotationcache % 12 == 1) {
+		setObjectImage(Ball[1], "image/football2.png");
+	}
+	else if (rotationcache % 12 == 2) {
+		setObjectImage(Ball[1], "image/football3.png");
+	}
+	else if (rotationcache % 12 == 3) {
+		setObjectImage(Ball[1], "image/football4.png");
+	}
+	else if (rotationcache % 12 == 4) {
+		setObjectImage(Ball[1], "image/footsball5.png");
+	}
+	else if (rotationcache % 12 == 5) {
+		setObjectImage(Ball[1], "image/football6.png");
+	}
+	else if (rotationcache % 12 == 6) {
+		setObjectImage(Ball[1], "image/football7.png");
+	}
+	else if (rotationcache % 12 == 7) {
+		setObjectImage(Ball[1], "image/football8.png");
+	}
+	else if (rotationcache % 12 == 8) {
+		setObjectImage(Ball[1], "image/football9.png");
+	}
+	else if (rotationcache % 12 == 9) {
+		setObjectImage(Ball[1], "image/football10.png");
+	}
+	else if (rotationcache % 12 == 10) {
+		setObjectImage(Ball[1], "image/football11.png");
+	}
+	else if (rotationcache % 12 == 11) {
+		setObjectImage(Ball[1], "image/football12.png");
+	}
+		}	
+	else if (ballstatus == 7) {
+	if (rotationcache % 12 == 0) {
+		setObjectImage(Ball[1], "image/bowlingball1.png");
+	}
+	else if (rotationcache % 12 == 1) {
+		setObjectImage(Ball[1], "image/bowlingball2.png");
+	}
+	else if (rotationcache % 12 == 2) {
+		setObjectImage(Ball[1], "image/bowlingball3.png");
+	}
+	else if (rotationcache % 12 == 3) {
+		setObjectImage(Ball[1], "image/bowlingball4.png");
+	}
+	else if (rotationcache % 12 == 4) {
+		setObjectImage(Ball[1], "image/bowlingball5.png");
+	}
+	else if (rotationcache % 12 == 5) {
+		setObjectImage(Ball[1], "image/bowlingball6.png");
+	}
+	else if (rotationcache % 12 == 6) {
+		setObjectImage(Ball[1], "image/bowlingball7.png");
+	}
+	else if (rotationcache % 12 == 7) {
+		setObjectImage(Ball[1], "image/bowlingball8.png");
+	}
+	else if (rotationcache % 12 == 8) {
+		setObjectImage(Ball[1], "image/bowlingball9.png");
+	}
+	else if (rotationcache % 12 == 9) {
+		setObjectImage(Ball[1], "image/bowlingball10.png");
+	}
+	else if (rotationcache % 12 == 10) {
+		setObjectImage(Ball[1], "image/bowlingball11.png");
+	}
+	else if (rotationcache % 12 == 11) {
+		setObjectImage(Ball[1], "image/bowlingball12.png");
+	}
+		}
+	else if (ballstatus == 8) {
+	if (rotationcache % 12 == 0) {
+		setObjectImage(Ball[1], "image/golfball1.png");
+	}
+	else if (rotationcache % 12 == 1) {
+		setObjectImage(Ball[1], "image/golfball2.png");
+	}
+	else if (rotationcache % 12 == 2) {
+		setObjectImage(Ball[1], "image/golfball3.png");
+	}
+	else if (rotationcache % 12 == 3) {
+		setObjectImage(Ball[1], "image/golfball4.png");
+	}
+	else if (rotationcache % 12 == 4) {
+		setObjectImage(Ball[1], "image/golfball5.png");
+	}
+	else if (rotationcache % 12 == 5) {
+		setObjectImage(Ball[1], "image/golfball6.png");
+	}
+	else if (rotationcache % 12 == 6) {
+		setObjectImage(Ball[1], "image/golfball7.png");
+	}
+	else if (rotationcache % 12 == 7) {
+		setObjectImage(Ball[1], "image/golfball8.png");
+	}
+	else if (rotationcache % 12 == 8) {
+		setObjectImage(Ball[1], "image/golfball9.png");
+	}
+	else if (rotationcache % 12 == 9) {
+		setObjectImage(Ball[1], "image/golfball10.png");
+	}
+	else if (rotationcache % 12 == 10) {
+		setObjectImage(Ball[1], "image/golfball11.png");
+	}
+	else if (rotationcache % 12 == 11) {
+		setObjectImage(Ball[1], "image/golfball12.png");
+	}
+		}
+	else if (ballstatus == 9) {
+	if (rotationcache % 12 == 0) {
+		setObjectImage(Ball[1], "image/8ball1.png");
+	}
+	else if (rotationcache % 12 == 1) {
+		setObjectImage(Ball[1], "image/8ball2.png");
+	}
+	else if (rotationcache % 12 == 2) {
+		setObjectImage(Ball[1], "image/8ball3.png");
+	}
+	else if (rotationcache % 12 == 3) {
+		setObjectImage(Ball[1], "image/8ball4.png");
+	}
+	else if (rotationcache % 12 == 4) {
+		setObjectImage(Ball[1], "image/8ball5.png");
+	}
+	else if (rotationcache % 12 == 5) {
+		setObjectImage(Ball[1], "image/8ball6.png");
+	}
+	else if (rotationcache % 12 == 6) {
+		setObjectImage(Ball[1], "image/8ball7.png");
+	}
+	else if (rotationcache % 12 == 7) {
+		setObjectImage(Ball[1], "image/8ball8.png");
+	}
+	else if (rotationcache % 12 == 8) {
+		setObjectImage(Ball[1], "image/8ball9.png");
+	}
+	else if (rotationcache % 12 == 9) {
+		setObjectImage(Ball[1], "image/8ball10.png");
+	}
+	else if (rotationcache % 12 == 10) {
+		setObjectImage(Ball[1], "image/8ball11.png");
+	}
+	else if (rotationcache % 12 == 11) {
+		setObjectImage(Ball[1], "image/8ball12.png");
+	}
+		}
 	}
 
 
@@ -455,6 +683,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 		if (angAniworking == 0 && powAniworking == 0) {
 			hideObject(powpointer);
 			hideObject(angpointer);
+			hideObject(shopbutton);
 			firinganimation();
 			playSound(fire);
 		}
@@ -464,6 +693,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 		if (angAniworking == 0 && powAniworking == 0) {
 			hideObject(powpointer);
 			hideObject(angpointer);
+			hideObject(shopbutton);
 			firinganimation();
 			playSound(fire);
 		}
@@ -676,6 +906,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 		showMessage("fully upgraded");
 	}
 	} 
+
 	else if (object == baseballicon) {
 	showMessage("업데이트 예정..");
 
@@ -707,35 +938,92 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 		showMessage("돈이 없어요 ㅠ");
 	}
 	}
-	else if (object == footballicon) {
-	showMessage("업데이트 예정..");
 
+	else if (object == soccerballicon) {
+	
+	if (money >= 1000) {
+		setObjectImage(Ball[1], "image/soccerball1.png");
+		setObjectImage(soccerballicon, "image/soccerballshop.png");
+		showMessage("구매 완료!");
+		ballstatus = 4;
+		money = money - 1000;
 
 	}
-	else if (object == eightballicon) {
-	showMessage("업데이트 예정..");
-
+	else {
+		showMessage("돈이 없어요 ㅠ");
+	}
 
 	}
 	else if (object == vollyballicon) {
-	showMessage("업데이트 예정..");
-
+	if (money >= 2000) {
+		setObjectImage(Ball[1], "image/vollyball1.png");
+		setObjectImage(vollyballicon, "image/vollyballshop.png");
+		showMessage("구매 완료!");
+		ballstatus = 5;
+		money = money - 2000;
 
 	}
-	
+	else {
+		showMessage("돈이 없어요 ㅠ");
+	}
+	}
+	else if (object == footballicon) {
+	if (money >= 3000) {
+		setObjectImage(Ball[1], "image/football1.png");
+		setObjectImage(footballicon, "image/footballshop.png");
+		showMessage("구매 완료!");
+		ballstatus = 6;
+		money = money - 3000;
+
+	}
+	else {
+		showMessage("돈이 없어요 ㅠ");
+	}
+
+	}	
+
 	else if (object == bowlingballicon) {
-	showMessage("업데이트 예정..");
+	if (money >= 5000) {
+		setObjectImage(Ball[1], "image/bowlingball1.png");
+		setObjectImage(bowlingballicon, "image/bowlingballshop.png");
+		showMessage("구매 완료!");
+		ballstatus = 7;
+		money = money - 5000;
+
+	}
+	else {
+		showMessage("돈이 없어요 ㅠ");
+	}
 
 
 	}
 	else if (object == golfballicon) {
-	showMessage("업데이트 예정..");
+	if (money >= 8000) {
+		setObjectImage(Ball[1], "image/golfball1.png");
+		setObjectImage(golfballicon, "image/golfballshop.png");
+		showMessage("구매 완료!");
+		ballstatus = 8;
+		money = money - 8000;
+
+	}
+	else {
+		showMessage("돈이 없어요 ㅠ");
+	}
 
 
 	}
-	else if (object == soccerballicon) {
-	showMessage("업데이트 예정..");
+	else if (object == eightballicon) {
+	if (money >= 19999) {
+		setObjectImage(Ball[1], "image/8ball1.png");
+		setObjectImage(eightballicon, "image/8ballshop.png");
+		showMessage("구매 완료!");
+		ballstatus = 9;
+		money = money - 19999;
 
+	}
+	else {
+		showMessage("돈이 없어요 ㅠ");
+	}
 
 	}
 
