@@ -9,7 +9,7 @@
 
 SceneID scene1, shop,title, introduction,scoreboard;
 ObjectID angleGauge, powerGauge, Canon, background, background1, angpointer, powpointer, angstopbutton, powstopbutton, startbutton, shopbutton, backbutton, titlestartbutton,restartbutton;
-ObjectID angaccuracyicon, powaccuracyicon,maxpowericon, baseballicon, basketballicon;
+ObjectID angaccuracyicon, powaccuracyicon,maxpowericon, baseballicon, basketballicon, tennisballicon, vollyballicon, bowlingballicon, eightballicon, golfballicon, footballicon, soccerballicon;
 ObjectID cannon,base;
 ObjectID Ball[16];
 
@@ -23,14 +23,14 @@ double score;
 
 // 각도 애니메이션 변수
 //시작
-double angx = 0, angX = 0, anganispeed = 40;//각도 게이지 속도
+double angx = 0, angX = 0, anganispeed = 50;//각도 게이지 속도
 int AngAnidiraction = 1;//AngAnidiraction가 1일때 오른쪽, 0일때 왼쪽 방향으로 이동중
 int angAniworking = 0; //ang 애니메이션이 작동하는 지 0 false 1 true
 //끝
 
 // 파워 애니메이션 변수
 //시작
-double powx = 0, powX = 0, powanispeed =1000;//파워 게이지 속도
+double powx = 0, powX = 0, powanispeed =1500;//파워 게이지 속도
 int powAniworking = 0; //pow 애니메이션이 작동하는 지 0 false 1 true
 //끝
 
@@ -422,8 +422,30 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				showMessage("돈이 없어요 ㅠ");
 			}
 		}
+		else if (angaccuracylev == 4) {
+			if (money >= 2000) {
+				setObjectImage(angaccuracyicon, "image/angaccuracyicon5.png");
+				money = money - 2000;
+				angaccuracylev++;
+				anganispeed = anganispeed - 5;
+			}
+			else {
+				showMessage("돈이 없어요 ㅠ");
+			}
+		}
+		else if (angaccuracylev == 5) {
+			if (money >= 5000) {
+				setObjectImage(angaccuracyicon, "image/angaccuracyicon6.png");
+				money = money - 5000;
+				angaccuracylev++;
+				anganispeed = anganispeed - 5;
+			}
+			else {
+				showMessage("돈이 없어요 ㅠ");
+			}
+		}
 		else {
-			showMessage("풀업글 완료");
+			showMessage("fully upgraded");
 		}
 	}
 	else if (object == powaccuracyicon) {
@@ -460,8 +482,30 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				showMessage("돈이 없어요 ㅠ");
 			}
 		}
+		else if (powaccuracylev == 4) {
+			if (money >= 2000) {
+				setObjectImage(powaccuracyicon, "image/powaccuracyicon5.png");
+				money = money - 2000;
+				powaccuracylev++;
+				powanispeed = powanispeed - 5;
+			}
+			else {
+				showMessage("돈이 없어요 ㅠ");
+			}
+		}
+		else if (powaccuracylev == 5) {
+			if (money >= 5000) {
+				setObjectImage(powaccuracyicon, "image/powaccuracyicon6.png");
+				money = money - 5000;
+				powaccuracylev++;
+				powanispeed = powanispeed - 5;
+			}
+			else {
+				showMessage("돈이 없어요 ㅠ");
+			}
+		}
 		else {
-			showMessage("풀업글 완료");
+			showMessage("fully upgraded");
 		}
 
 	}
@@ -500,14 +544,78 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 			showMessage("돈이 없어요 ㅠ");
 		}
 	}
+	else if (maxpowerlev == 4) {
+		if (money >= 2000) {
+			setObjectImage(maxpowericon, "image/maxpowericon5.png");
+			money = money - 2000;
+			maxpowerlev++;
+			defaultpower = defaultpower + 10;
+		}
+		else {
+			showMessage("돈이 없어요 ㅠ");
+		}
+	}
+	else if (maxpowerlev == 5) {
+		if (money >= 5000) {
+			setObjectImage(maxpowericon, "image/maxpowericon6.png");
+			money = money - 5000;
+			maxpowerlev++;
+			defaultpower = defaultpower + 10;
+		}
+		else {
+			showMessage("돈이 없어요 ㅠ");
+		}
+	}
 	else {
-		showMessage("풀업글 완료");
+		showMessage("fully upgraded");
 	}
 	} 
 	else if (object == baseballicon) {
-	setObjectImage(Ball[1], "image/baseball1.png");//// 로테이션 프로세스까지 다다다다다다 해야 엉어유ㅠ
+	showMessage("업데이트 예정..");
+
 
 	}
+	else if (object == basketballicon) {
+	showMessage("업데이트 예정..");
+	
+
+	}
+	else if (object ==footballicon) {
+	showMessage("업데이트 예정..");
+
+
+	}
+	else if (object == eightballicon) {
+	showMessage("업데이트 예정..");
+
+
+	}
+	else if (object == vollyballicon) {
+	showMessage("업데이트 예정..");
+
+
+	}
+	else if (object == tennisballicon) {
+	showMessage("업데이트 예정..");
+
+
+	}
+	else if (object == bowlingballicon) {
+	showMessage("업데이트 예정..");
+
+
+	}
+	else if (object == golfballicon) {
+	showMessage("업데이트 예정..");
+
+
+	}
+	else if (object == soccerballicon) {
+	showMessage("업데이트 예정..");
+
+
+	}
+
 	playSound(click);
 }
 
@@ -589,19 +697,25 @@ int main() {
 	angstopbutton = createObject("image/button1.png", scene1, 555, 35, false);
 	powstopbutton = createObject("image/button1.png", scene1, 655, 35, false);
 
-	titlestartbutton = createObject("image/start.png", title, 400, 250, true);
-	startbutton = createObject("image/start.png", scene1, 400, 250, true);
-	shopbutton = createObject("image/shopbutton.png", scene1, 1000, 500, false);
+	titlestartbutton = createObject("image/start.png", title, 575, 200, true);
+	startbutton = createObject("image/start.png", scene1,575, 200, true);
+	shopbutton = createObject("image/shopbutton.png", scene1, 1100, 650, false);
 	backbutton = createObject("image/back.png", shop, 10, 600, false);
-	restartbutton = createObject("image/restart.png", scene1, 100, 500, false);
+	restartbutton = createObject("image/restart.png", scene1, 1000, 650, false);
 
-	angaccuracyicon = createObject("image/angaccuracyicon1.png", shop, 850, 450, true);	
-	powaccuracyicon = createObject("image/powaccuracyicon1.png", shop, 850, 250, true);	
-	maxpowericon = createObject("image/maxpowericon1c.png", shop, 850, 20, true);
+	angaccuracyicon = createObject("image/angaccuracyicon1.png", shop, 850, 415, true);	
+	powaccuracyicon = createObject("image/powaccuracyicon1.png", shop, 850, 225, true);	
+	maxpowericon = createObject("image/maxpowericon1.png", shop, 850, 35, true);
 
-	baseballicon = createObject("image/baseballicon.png", shop, 195, 395, true);
-	basketballicon = createObject("image/basketballicon.png", shop, 195, 245, true);
-	
+	baseballicon = createObject("image/baseballshop.png", shop, 200, 415, true);
+	basketballicon = createObject("image/basketballshop.png", shop, 380, 415, true);
+	tennisballicon = createObject("image/tennisballshopno.png", shop, 560, 415, true);
+	soccerballicon = createObject("image/soccerballshopno.png", shop, 200, 225, true);
+	vollyballicon = createObject("image/vollyballshopno.png", shop, 380, 225, true);
+	footballicon = createObject("image/footballshopno.png", shop, 560, 225, true);
+	bowlingballicon = createObject("image/bowlingballshopno.png", shop, 200, 35, true);
+	golfballicon = createObject("image/golfballshopno.png", shop, 380, 35, true);
+	eightballicon = createObject("image/8ballshopno.png", shop, 560, 35, true);
 	
 	cannon = createObject("image/cannon00.png", scene1, 15, 188, true);
 	
