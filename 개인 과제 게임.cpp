@@ -38,7 +38,7 @@ int powAniworking = 0; //pow 애니메이션이 작동하는 지 0 false 1 true
 
 // 발사 애니메이션 변수
 //시작
-double firingangle, firingpower,defaultpower=100;// 기본 파워
+double firingangle, firingpower,defaultpower=150;// 기본 파워
 double ballmovement=0;// 화면 움직이기 전 공만 움직일때 움직인 거리 측정
 double Ballx = 0, Bally = 0;
 double BallX = 0, BallY = 0,BallX1=0;
@@ -176,7 +176,11 @@ void powAnimationstop() {
 }
 
 void firingrotaition() {
+	
 	if (ballstatus == 1) {
+		/*char path[256];
+		sprintf_s(path, "image/baseball%d.png", rotationcache % 12);
+		setObjectImage(Ball[1], path);*/
 		if (rotationcache % 12 == 0) {
 			setObjectImage(Ball[1], "image/baseball1.png");
 		}
@@ -582,7 +586,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 			playSound(thud);
 
 			char buf[256];
-			sprintf_s(buf, "%.0lfm!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
+			sprintf_s(buf, "%.0lf점!!\n 얻은 돈 : %.0lf x %.0lf", score / 100, score / 100, multiply, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
 			showMessage(buf);
 
 			money = money + score / 100 * multiply;
@@ -602,7 +606,8 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 				playSound(thud);
 
 				char buf[256];
-				sprintf_s(buf, "%.0lfm!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
+				//sprintf_s(buf, "%.0lfm!! x %.0lf", score / 100, multiply, scene1);
+				sprintf_s(buf, "%.0lf점!!\n 얻은 돈 : %.0lf x %.0lf", score/100, score / 100, multiply, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
 				showMessage(buf);
 
 
@@ -774,7 +779,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				setObjectImage(angaccuracyicon, "image/angaccuracyicon6.png");
 				money = money - 5000;
 				angaccuracylev++;
-				anganispeed = anganispeed - 5;
+				anganispeed = anganispeed - 2;
 			}
 			else {
 				showMessage("돈이 없어요 ㅠ");
@@ -823,7 +828,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				setObjectImage(powaccuracyicon, "image/powaccuracyicon5.png");
 				money = money - 2000;
 				powaccuracylev++;
-				powanispeed = powanispeed - 50;
+				powanispeed = powanispeed - 30;
 			}
 			else {
 				showMessage("돈이 없어요 ㅠ");
@@ -834,7 +839,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				setObjectImage(powaccuracyicon, "image/powaccuracyicon6.png");
 				money = money - 5000;
 				powaccuracylev++;
-				powanispeed = powanispeed - 50;
+				powanispeed = powanispeed - 20;
 			}
 			else {
 				showMessage("돈이 없어요 ㅠ");
@@ -863,7 +868,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 			setObjectImage(maxpowericon, "image/maxpowericon3.png");
 			money = money - 1000;
 			maxpowerlev++;
-			defaultpower = defaultpower + 100;
+			defaultpower = defaultpower + 200;
 		}
 		else {
 			showMessage("돈이 없어요 ㅠ");
@@ -874,7 +879,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 			setObjectImage(maxpowericon, "image/maxpowericon4.png");
 			money = money - 1500;
 			maxpowerlev++;
-			defaultpower = defaultpower + 10;
+			defaultpower = defaultpower + 150;
 		}
 		else {
 			showMessage("돈이 없어요 ㅠ");
@@ -885,7 +890,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 			setObjectImage(maxpowericon, "image/maxpowericon5.png");
 			money = money - 2000;
 			maxpowerlev++;
-			defaultpower = defaultpower + 10;
+			defaultpower = defaultpower + 100;
 		}
 		else {
 			showMessage("돈이 없어요 ㅠ");
@@ -896,7 +901,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 			setObjectImage(maxpowericon, "image/maxpowericon6.png");
 			money = money - 5000;
 			maxpowerlev++;
-			defaultpower = defaultpower + 10;
+			defaultpower = defaultpower + 100;
 		}
 		else {
 			showMessage("돈이 없어요 ㅠ");
@@ -1065,10 +1070,10 @@ int main() {
 	setMouseCallback(mouseCallback);
 	setTimerCallback(timerCallback);
 	setSoundCallback(soundCallback);
-	scene1 = createScene("게임화면", "image/1.png");
+	scene1 = createScene("게임화면", "image/screen.png");
 	title = createScene("타이틀화면", "image/title.png");
-	introduction = createScene("설명화면", "image/1.png");
-	scoreboard = createScene("점수화면", "image/1.png");
+	//introduction = createScene("설명화면", "image/1.png");
+	//scoreboard = createScene("점수화면", "image/1.png");
 	shop = createScene("상점", "image/shop back.png");
 
 
