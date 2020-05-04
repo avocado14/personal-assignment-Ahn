@@ -117,7 +117,7 @@ void angleanimaion() {	//angX 는 실제 x 좌표 angx 는 실제를 구하기�
 		angx = angx + anganispeed;
 		angX = 31 * log(angx + 1);
 	}
-	locateObject(angpointer, scene1, angX + 250, 40);
+	locateObject(angpointer, scene1, angX + 250, 45);
 	stopTimer(angAni);
 	startTimer(angAni);
 	setTimer(angAni, 0.01f);
@@ -133,7 +133,7 @@ void poweranimaion() {//powX 는 실제 x 좌표 powx 는 실제를 구하기위
 		powX = 0;
 	}
 
-	locateObject(powpointer, scene1, powX + 770, 40);
+	locateObject(powpointer, scene1, powX + 770, 45);
 	stopTimer(powAni);
 	startTimer(powAni);
 	setTimer(powAni, 0.01f);
@@ -907,8 +907,9 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 	}
 	} 
 
+
 	else if (object == baseballicon) {
-	showMessage("업데이트 예정..");
+	showMessage("기본 공..");
 
 
 	}
@@ -1052,34 +1053,18 @@ void timerCallback(TimerID timer) {
 	}
 }
 
-
-
-/*void startGame () {// ------------------------------------------------------------------------------------------------????
-	if (angAniworking == 1) {	
-		double num;
-		startTimer(angAni);
-		angAniworking = 0;
-		num = angX + 160;
-		num = num / 320;
-		firingangle = num * 90;
-		
-
-	}
-	else if (powAniworking == 1) {
-		double firingpowerscale;
-		startTimer(powAni);
-		powAniworking = 0;
-		firingpowerscale = powX / 450;
-		firingpower = firingpowerscale * defaultpower;
+void soundCallback(SoundID sound) {
+	if (sound == theme) {
+		playSound(theme);
 	}
 	
-
-}*/
+}
 
 int main() {
 
 	setMouseCallback(mouseCallback);
 	setTimerCallback(timerCallback);
+	setSoundCallback(soundCallback);
 	scene1 = createScene("게임화면", "image/1.png");
 	title = createScene("타이틀화면", "image/title.png");
 	introduction = createScene("설명화면", "image/1.png");
@@ -1102,8 +1087,8 @@ int main() {
 	Ball[1] = createObject("image/baseball1.png", scene1, 150, 250, true);
 	base = createObject("image/base.png", scene1, 0, 0, true);
 
-	angpointer = createObject("image/anggauge.png", scene1, 190, 40,false);
-	powpointer = createObject("image/anggauge.png", scene1, 770, 40, false);
+	angpointer = createObject("image/gauge.png", scene1, 190, 40,false);
+	powpointer = createObject("image/gauge.png", scene1, 770, 40, false);
 
 	angstopbutton = createObject("image/angstopbutton.png", scene1, 500, 35, false);
 	powstopbutton = createObject("image/powstopbutton.png", scene1, 630, 35, false);
