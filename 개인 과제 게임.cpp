@@ -10,8 +10,13 @@
 SceneID scene1, shop,title, introduction,scoreboard;
 ObjectID angleGauge, powerGauge, Canon, background, background1, angpointer, powpointer, angstopbutton, powstopbutton, startbutton, shopbutton, backbutton, titlestartbutton,restartbutton;
 ObjectID angaccuracyicon, powaccuracyicon,maxpowericon, baseballicon, basketballicon;
-ObjectID cannon;
+ObjectID cannon,base;
 ObjectID Ball[16];
+
+
+SoundID click = createSound("sound/click.wav");
+SoundID fire = createSound("sound/fire.wav");
+SoundID thud = createSound("sound/thud.wav");
 
 double score;
 
@@ -63,6 +68,8 @@ ObjectID createObject(const char* image, SceneID scene, int x, int y, bool shown
 	}
 	return(object);
 }
+
+
 
 double Radian(double _num) {
 	return _num * (PI/ 180);
@@ -212,7 +219,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 	//firingangle = 0.78;
 	//firingangle = 1.22;
 	//firingpower = 200;
-
+	
 	
 	if (0<= (Ballx+150)&& (Ballx+150) <= 640 && 0<=(Bally+250) &&(Bally+250) <= 360) {
 		double num1, num2, num3;
@@ -235,6 +242,8 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 			stopTimer(timer1);
 			score = Ballx;
 
+			playSound(thud);
+
 			char buf[256];
 			sprintf_s(buf, "제 점수는요 %.0lf점 입니다!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
 			showMessage(buf);
@@ -252,6 +261,8 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 			if (BallY-1280>-1030) {// 땅에 박혔을때 애니메이션 멈추는 장치----------------------------------보완 필요 !!!!!!!!!
 				stopTimer(timer1);
 				score = Ballx - BallX;
+
+				playSound(thud);
 
 				char buf[256];
 				sprintf_s(buf, "제 점수는요 %.0lf점 입니다!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
@@ -271,6 +282,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 				BallY = num1 + num3;//포물선 공식
 
 				locateObject(cannon, scene1, BallX, BallY); // ----------------------------------------------------------------------------------------수정해야되지만 귀찮음 굳이?
+				locateObject(base, scene1, BallX, BallY);
 
 				BallX1 = BallX + 4300;
 				BallXr = BallX - 1280;
@@ -328,6 +340,7 @@ void Gamestarter() {
 	locateObject(background1, scene1, 3780, -1030);
 	locateObject(Ball[1], scene1, 150, 250);
 	locateObject(cannon, scene1, 15, 188); 
+	locateObject(base, scene1, 0, 0);
 }
 
 void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
@@ -337,6 +350,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 			hideObject(powpointer);
 			hideObject(angpointer);
 			firinganimation();
+			playSound(fire);
 		}
 	}
 	else if (object == powstopbutton) {
@@ -345,6 +359,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 			hideObject(powpointer);
 			hideObject(angpointer);
 			firinganimation();
+			playSound(fire);
 		}
 	}
 	else if (object == startbutton) {
@@ -493,6 +508,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 	setObjectImage(Ball[1], "image/baseball1.png");//// 로테이션 프로세스까지 다다다다다다 해야 엉어유ㅠ
 
 	}
+	playSound(click);
 }
 
    // if (object == ) {       }
@@ -565,7 +581,7 @@ int main() {
 	}*/
 	
 	Ball[1] = createObject("image/baseball1.png", scene1, 150, 250, true);
-
+	base = createObject("image/base.png", scene1, 0, 0, true);
 
 	angpointer = createObject("image/anggauge.png", scene1, 190, 40,false);
 	powpointer = createObject("image/anggauge.png", scene1, 770, 40, false);
@@ -581,13 +597,14 @@ int main() {
 
 	angaccuracyicon = createObject("image/angaccuracyicon1.png", shop, 850, 450, true);	
 	powaccuracyicon = createObject("image/powaccuracyicon1.png", shop, 850, 250, true);	
-	maxpowericon = createObject("image/maxpowericon1.png", shop, 850, 50, true);
+	maxpowericon = createObject("image/maxpowericon1c.png", shop, 850, 20, true);
 
 	baseballicon = createObject("image/baseballicon.png", shop, 195, 395, true);
 	basketballicon = createObject("image/basketballicon.png", shop, 195, 245, true);
 	
 	
 	cannon = createObject("image/cannon00.png", scene1, 15, 188, true);
+	
 	
 
 
