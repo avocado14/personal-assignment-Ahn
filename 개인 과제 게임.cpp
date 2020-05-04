@@ -50,7 +50,7 @@ double backgroundsliding = 0, backgroundsliding1=0;
 
 // 상점 변수
 //시작
-int money = 40000; 
+int money = 0; 
 int angaccuracylev = 1, powaccuracylev = 1, maxpowerlev = 1;
 //끝
 
