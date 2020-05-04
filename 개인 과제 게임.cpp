@@ -562,14 +562,14 @@ int main() {
 	setMouseCallback(mouseCallback);
 	setTimerCallback(timerCallback);
 	scene1 = createScene("게임화면", "image/1.png");
-	title = createScene("타이틀화면", "image/1.png");
+	title = createScene("타이틀화면", "image/title.png");
 	introduction = createScene("설명화면", "image/1.png");
 	scoreboard = createScene("점수화면", "image/1.png");
-	shop = createScene("상점", "image/shop.png");
+	shop = createScene("상점", "image/shop back.png");
 
 
-	background = createObject("image/배경.png", scene1, -520, -1030, true);
-	background1 = createObject("image/배경 1.png", scene1, 3780, -1030, true);
+	background = createObject("image/배경 수정.png", scene1, -520, -1030, true);
+	background1 = createObject("image/배경 수정1.png", scene1, 3780, -1030, true);
 	
 	
 	/*char Ball[12];
