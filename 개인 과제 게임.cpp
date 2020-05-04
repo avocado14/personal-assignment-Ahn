@@ -47,11 +47,12 @@ int balllaunched = 0;// 공 혼자 날라가는 애니메이션을 실행 했는
 int firingrotate = 0;
 int rotationcache = 0;
 double backgroundsliding = 0, backgroundsliding1=0;
+int ballstatus = 1;
 //끝
 
 // 상점 변수
 //시작
-int money = 400000; 
+int money = 0; 
 int angaccuracylev = 1, powaccuracylev = 1, maxpowerlev = 1;
 //끝
 
@@ -175,44 +176,122 @@ void powAnimationstop() {
 }
 
 void firingrotaition() {
-	if (rotationcache%12 == 0) {
-		setObjectImage(Ball[1], "image/baseball1.png");
+	if (ballstatus == 1) {
+		if (rotationcache % 12 == 0) {
+			setObjectImage(Ball[1], "image/baseball1.png");
+		}
+		else if (rotationcache % 12 == 1) {
+			setObjectImage(Ball[1], "image/baseball2.png");
+		}
+		else if (rotationcache % 12 == 2) {
+			setObjectImage(Ball[1], "image/baseball3.png");
+		}
+		else if (rotationcache % 12 == 3) {
+			setObjectImage(Ball[1], "image/baseball4.png");
+		}
+		else if (rotationcache % 12 == 4) {
+			setObjectImage(Ball[1], "image/baseball5.png");
+		}
+		else if (rotationcache % 12 == 5) {
+			setObjectImage(Ball[1], "image/baseball6.png");
+		}
+		else if (rotationcache % 12 == 6) {
+			setObjectImage(Ball[1], "image/baseball7.png");
+		}
+		else if (rotationcache % 12 == 7) {
+			setObjectImage(Ball[1], "image/baseball8.png");
+		}
+		else if (rotationcache % 12 == 8) {
+			setObjectImage(Ball[1], "image/baseball9.png");
+		}
+		else if (rotationcache % 12 == 9) {
+			setObjectImage(Ball[1], "image/baseball10.png");
+		}
+		else if (rotationcache % 12 == 10) {
+			setObjectImage(Ball[1], "image/baseball11.png");
+		}
+		else if (rotationcache % 12 == 11) {
+			setObjectImage(Ball[1], "image/baseball12.png");
+		}
 	}
-	else if (rotationcache%12 == 1) {
-		setObjectImage(Ball[1], "image/baseball2.png");
+	else if (ballstatus == 2) {
+		if (rotationcache % 12 == 0) {
+			setObjectImage(Ball[1], "image/basketball1.png");
+		}
+		else if (rotationcache % 12 == 1) {
+			setObjectImage(Ball[1], "image/basketball2.png");
+		}
+		else if (rotationcache % 12 == 2) {
+			setObjectImage(Ball[1], "image/basketball3.png");
+		}
+		else if (rotationcache % 12 == 3) {
+			setObjectImage(Ball[1], "image/basketball4.png");
+		}
+		else if (rotationcache % 12 == 4) {
+			setObjectImage(Ball[1], "image/basketball5.png");
+		}
+		else if (rotationcache % 12 == 5) {
+			setObjectImage(Ball[1], "image/basketball6.png");
+		}
+		else if (rotationcache % 12 == 6) {
+			setObjectImage(Ball[1], "image/basketball7.png");
+		}
+		else if (rotationcache % 12 == 7) {
+			setObjectImage(Ball[1], "image/basketball8.png");
+		}
+		else if (rotationcache % 12 == 8) {
+			setObjectImage(Ball[1], "image/basketball9.png");
+		}
+		else if (rotationcache % 12 == 9) {
+			setObjectImage(Ball[1], "image/basketball10.png");
+		}
+		else if (rotationcache % 12 == 10) {
+			setObjectImage(Ball[1], "image/basketball11.png");
+		}
+		else if (rotationcache % 12 == 11) {
+			setObjectImage(Ball[1], "image/basketball12.png");
+		}
 	}
-	else if (rotationcache % 12 == 2) {
-		setObjectImage(Ball[1], "image/baseball3.png");
+	else if (ballstatus == 3) {
+			if (rotationcache % 12 == 0) {
+				setObjectImage(Ball[1], "image/tennisball1.png");
+			}
+			else if (rotationcache % 12 == 1) {
+				setObjectImage(Ball[1], "image/tennisball2.png");
+			}
+			else if (rotationcache % 12 == 2) {
+				setObjectImage(Ball[1], "image/tennisball3.png");
+			}
+			else if (rotationcache % 12 == 3) {
+				setObjectImage(Ball[1], "image/tennisball4.png");
+			}
+			else if (rotationcache % 12 == 4) {
+				setObjectImage(Ball[1], "image/tennisball5.png");
+			}
+			else if (rotationcache % 12 == 5) {
+				setObjectImage(Ball[1], "image/tennisball6.png");
+			}
+			else if (rotationcache % 12 == 6) {
+				setObjectImage(Ball[1], "image/tennisball7.png");
+			}
+			else if (rotationcache % 12 == 7) {
+				setObjectImage(Ball[1], "image/tennisball8.png");
+			}
+			else if (rotationcache % 12 == 8) {
+				setObjectImage(Ball[1], "image/tennisball9.png");
+			}
+			else if (rotationcache % 12 == 9) {
+				setObjectImage(Ball[1], "image/tennisball10.png");
+			}
+			else if (rotationcache % 12 == 10) {
+				setObjectImage(Ball[1], "image/tennisball11.png");
+			}
+			else if (rotationcache % 12 == 11) {
+				setObjectImage(Ball[1], "image/tennisball12.png");
+			}
+		}
 	}
-	else if (rotationcache % 12 == 3) {
-		setObjectImage(Ball[1], "image/baseball4.png");
-	}
-	else if (rotationcache % 12 == 4) {
-		setObjectImage(Ball[1], "image/baseball5.png");
-	}
-	else if (rotationcache % 12 == 5) {
-		setObjectImage(Ball[1], "image/baseball6.png");
-	}
-	else if (rotationcache % 12 == 6) {
-		setObjectImage(Ball[1], "image/baseball7.png");
-	}
-	else if (rotationcache % 12 == 7) {
-		setObjectImage(Ball[1], "image/baseball8.png");
-	}
-	else if (rotationcache % 12 == 8) {
-		setObjectImage(Ball[1], "image/baseball9.png");
-	}
-	else if (rotationcache % 12 == 9) {
-		setObjectImage(Ball[1], "image/baseball10.png");
-	}
-	else if (rotationcache % 12 == 10) {
-		setObjectImage(Ball[1], "image/baseball11.png");
-	}
-	else if (rotationcache % 12 == 11) {
-		setObjectImage(Ball[1], "image/baseball12.png");
-	}
-	
-}
+
 
 
 void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날아가는거
@@ -220,7 +299,36 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 	//firingangle = 0.78;
 	//firingangle = 1.22;
 	//firingpower = 200;
-	
+	double multiply;
+	{
+		if (ballstatus == 1) {
+			multiply = 1;
+		}
+		else if (ballstatus == 2) {
+			multiply = 1.1;
+		}
+		else if (ballstatus == 3) {
+			multiply = 1.2;
+		}
+		else if (ballstatus == 4) {
+			multiply = 1.4;
+		}
+		else if (ballstatus == 5) {
+			multiply = 1.5;
+		}
+		else if (ballstatus == 6) {
+			multiply = 1.5;
+		}
+		else if (ballstatus == 7) {
+			multiply = 1.8;
+		}
+		else if (ballstatus == 8) {
+			multiply = 2.0;
+		}
+		else if (ballstatus == 9) {
+			multiply = 3.0;
+		}
+	}
 	
 	if (0<= (Ballx+150)&& (Ballx+150) <= 640 && 0<=(Bally+250) &&(Bally+250) <= 360) {
 		double num1, num2, num3;
@@ -249,7 +357,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 			sprintf_s(buf, "%.0lfm!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
 			showMessage(buf);
 
-			money = money + score / 100;
+			money = money + score / 100 * multiply;
 			showObject(shopbutton);
 			showObject(restartbutton);
 		}
@@ -269,7 +377,8 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 				sprintf_s(buf, "%.0lfm!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
 				showMessage(buf);
 
-				money = money + score / 100;
+
+				money = money + score / 100 *multiply;
 				showObject(shopbutton);
 				showObject(restartbutton);
 			}
@@ -314,10 +423,6 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 	}		
 	}
 
-void restart() {
-	showObject(powpointer);
-	showObject(angpointer);
-}
 
 void Gamestarter() {
 	startTimer(angAni);
@@ -577,9 +682,30 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 
 	}
 	else if (object == basketballicon) {
-	showMessage("업데이트 예정..");
-	
+	if (money >= 100) {
+		setObjectImage(Ball[1], "image/basketball1.png");
+		setObjectImage(basketballicon, "image/basketballshop.png");
+		showMessage("구매 완료!");
+		ballstatus = 2;
+		money = money - 100;
+		
+	}
+	else {
+		showMessage("돈이 없어요 ㅠ");
+	}
+	}
+	else if (object == tennisballicon) {
+	if (money >= 500) {
+		setObjectImage(Ball[1], "image/tennisball1.png");
+		setObjectImage(tennisballicon, "image/tennisballshop.png");
+		showMessage("구매 완료!");
+		ballstatus = 3;
+		money = money - 500;
 
+	}
+	else {
+		showMessage("돈이 없어요 ㅠ");
+	}
 	}
 	else if (object == footballicon) {
 	showMessage("업데이트 예정..");
@@ -596,11 +722,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 
 
 	}
-	else if (object == tennisballicon) {
-	showMessage("업데이트 예정..");
-
-
-	}
+	
 	else if (object == bowlingballicon) {
 	showMessage("업데이트 예정..");
 
@@ -709,7 +831,7 @@ int main() {
 	maxpowericon = createObject("image/maxpowericon1.png", shop, 850, 35, true);
 
 	baseballicon = createObject("image/baseballshop.png", shop, 200, 415, true);
-	basketballicon = createObject("image/basketballshop.png", shop, 380, 415, true);
+	basketballicon = createObject("image/basketballshopno.png", shop, 380, 415, true);
 	tennisballicon = createObject("image/tennisballshopno.png", shop, 560, 415, true);
 	soccerballicon = createObject("image/soccerballshopno.png", shop, 200, 225, true);
 	vollyballicon = createObject("image/vollyballshopno.png", shop, 380, 225, true);
