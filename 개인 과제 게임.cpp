@@ -17,6 +17,7 @@ ObjectID Ball[16];
 SoundID click = createSound("sound/click.wav");
 SoundID fire = createSound("sound/fire.wav");
 SoundID thud = createSound("sound/thud.wav");
+SoundID theme = createSound("sound/theme.wav");
 
 double score;
 
@@ -30,7 +31,7 @@ int angAniworking = 0; //ang 애니메이션이 작동하는 지 0 false 1 true
 
 // 파워 애니메이션 변수
 //시작
-double powx = 0, powX = 0, powanispeed =1500;//파워 게이지 속도
+double powx = 0, powX = 0, powanispeed =1000;//파워 게이지 속도
 int powAniworking = 0; //pow 애니메이션이 작동하는 지 0 false 1 true
 //끝
 
@@ -50,7 +51,7 @@ double backgroundsliding = 0, backgroundsliding1=0;
 
 // 상점 변수
 //시작
-int money = 0; 
+int money = 400000; 
 int angaccuracylev = 1, powaccuracylev = 1, maxpowerlev = 1;
 //끝
 
@@ -245,7 +246,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 			playSound(thud);
 
 			char buf[256];
-			sprintf_s(buf, "제 점수는요 %.0lf점 입니다!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
+			sprintf_s(buf, "%.0lfm!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
 			showMessage(buf);
 
 			money = money + score / 100;
@@ -265,7 +266,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 				playSound(thud);
 
 				char buf[256];
-				sprintf_s(buf, "제 점수는요 %.0lf점 입니다!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
+				sprintf_s(buf, "%.0lfm!!", score/100, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
 				showMessage(buf);
 
 				money = money + score / 100;
@@ -454,7 +455,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				setObjectImage(powaccuracyicon, "image/powaccuracyicon2.png");
 				money = money - 500;
 				powaccuracylev++;
-				powanispeed = powanispeed - 5;
+				powanispeed = powanispeed - 50;
 			}
 			else {
 				showMessage("돈이 없어요 ㅠ");
@@ -465,7 +466,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				setObjectImage(powaccuracyicon, "image/powaccuracyicon3.png");
 				money = money - 1000;
 				powaccuracylev++;
-				powanispeed = powanispeed - 5;
+				powanispeed = powanispeed - 50;
 			}
 			else {
 				showMessage("돈이 없어요 ㅠ");
@@ -476,7 +477,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				setObjectImage(powaccuracyicon, "image/powaccuracyicon4.png");
 				money = money - 1500;
 				powaccuracylev++;
-				powanispeed = powanispeed - 5;
+				powanispeed = powanispeed - 50;
 			}
 			else {
 				showMessage("돈이 없어요 ㅠ");
@@ -487,7 +488,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				setObjectImage(powaccuracyicon, "image/powaccuracyicon5.png");
 				money = money - 2000;
 				powaccuracylev++;
-				powanispeed = powanispeed - 5;
+				powanispeed = powanispeed - 50;
 			}
 			else {
 				showMessage("돈이 없어요 ㅠ");
@@ -498,7 +499,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				setObjectImage(powaccuracyicon, "image/powaccuracyicon6.png");
 				money = money - 5000;
 				powaccuracylev++;
-				powanispeed = powanispeed - 5;
+				powanispeed = powanispeed - 50;
 			}
 			else {
 				showMessage("돈이 없어요 ㅠ");
@@ -580,7 +581,7 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 	
 
 	}
-	else if (object ==footballicon) {
+	else if (object == footballicon) {
 	showMessage("업데이트 예정..");
 
 
@@ -694,8 +695,8 @@ int main() {
 	angpointer = createObject("image/anggauge.png", scene1, 190, 40,false);
 	powpointer = createObject("image/anggauge.png", scene1, 770, 40, false);
 
-	angstopbutton = createObject("image/button1.png", scene1, 555, 35, false);
-	powstopbutton = createObject("image/button1.png", scene1, 655, 35, false);
+	angstopbutton = createObject("image/angstopbutton.png", scene1, 500, 35, false);
+	powstopbutton = createObject("image/powstopbutton.png", scene1, 630, 35, false);
 
 	titlestartbutton = createObject("image/start.png", title, 575, 200, true);
 	startbutton = createObject("image/start.png", scene1,575, 200, true);
@@ -730,7 +731,7 @@ int main() {
 	angAni = createTimer(0.01f);
 	powAni = createTimer(0.01f);
 	
-
+	playSound(theme);
 	startGame(title);
 	
 }
