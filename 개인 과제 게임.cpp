@@ -48,11 +48,12 @@ int firingrotate = 0;
 int rotationcache = 0;
 double backgroundsliding = 0, backgroundsliding1=0;
 int ballstatus = 1;
+double multiply;
 //끝
 
 // 상점 변수
 //시작
-int money = 0; 
+int money = 100000; 
 int angaccuracylev = 1, powaccuracylev = 1, maxpowerlev = 1;
 //끝
 
@@ -531,7 +532,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 	//firingangle = 0.78;
 	//firingangle = 1.22;
 	//firingpower = 200;
-	double multiply;
+	
 	{
 		if (ballstatus == 1) {
 			multiply = 1;
@@ -586,7 +587,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 			playSound(thud);
 
 			char buf[256];
-			sprintf_s(buf, "%.0lf점!!\n 얻은 돈 : %.0lf x %.0lf", score / 100, score / 100, multiply, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
+			sprintf_s(buf, "%.0lf점!!\n 얻은 돈 : %.0lf x %.1lf", score / 100, score / 100, multiply, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
 			showMessage(buf);
 
 			money = money + score / 100 * multiply;
@@ -607,7 +608,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 
 				char buf[256];
 				//sprintf_s(buf, "%.0lfm!! x %.0lf", score / 100, multiply, scene1);
-				sprintf_s(buf, "%.0lf점!!\n 얻은 돈 : %.0lf x %.0lf", score/100, score / 100, multiply, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
+				sprintf_s(buf, "%.0lf점!!\n 얻은 돈 : %.0lf x %.1lf", score/100, score / 100, multiply, scene1);// 점수 메세지 출력 부분 총2개 있음 주의!
 				showMessage(buf);
 
 
@@ -785,6 +786,17 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				showMessage("돈이 없어요 ㅠ");
 			}
 		}
+		else if (angaccuracylev == 6) {
+			if (money >= 15000) {
+				setObjectImage(angaccuracyicon, "image/angaccuracyicon7.png");
+				money = money - 15000;
+				angaccuracylev++;
+				anganispeed = anganispeed - 4;
+			}
+			else {
+				showMessage("돈이 없어요 ㅠ");
+			}
+		}
 		else {
 			showMessage("fully upgraded");
 		}
@@ -845,6 +857,17 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 				showMessage("돈이 없어요 ㅠ");
 			}
 		}
+		else if (powaccuracylev == 6) {
+			if (money >= 15000) {
+				setObjectImage(powaccuracyicon, "image/powaccuracyicon7.png");
+				money = money - 15000;
+				powaccuracylev++;
+				powanispeed = powanispeed - 30;
+			}
+			else {
+				showMessage("돈이 없어요 ㅠ");
+			}
+		}
 		else {
 			showMessage("fully upgraded");
 		}
@@ -900,6 +923,17 @@ void mouseCallback(ObjectID object, int x, int y, MouseAction action) {
 		if (money >= 5000) {
 			setObjectImage(maxpowericon, "image/maxpowericon6.png");
 			money = money - 5000;
+			maxpowerlev++;
+			defaultpower = defaultpower + 100;
+		}
+		else {
+			showMessage("돈이 없어요 ㅠ");
+		}
+	}
+	else if (maxpowerlev == 6) {
+		if (money >= 15000) {
+			setObjectImage(maxpowericon, "image/maxpowericon7.png");
+			money = money - 15000;
 			maxpowerlev++;
 			defaultpower = defaultpower + 100;
 		}
