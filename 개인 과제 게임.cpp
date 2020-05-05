@@ -53,7 +53,7 @@ double multiply;
 
 // 상점 변수
 //시작
-int money = 100000; 
+int money = 0; 
 int angaccuracylev = 1, powaccuracylev = 1, maxpowerlev = 1;
 //끝
 
@@ -577,7 +577,7 @@ void firinganimation() {//Ballx 는공만 날아가는거 BallX는 화면이 날
 		setTimer(timer1, 0.01f);
 		rotationcache++;
 		firingrotaition();
-		ballmovement = ballmovement + 50;//-----------------------------------------------프레임당 움직임
+		ballmovement = ballmovement + 80;//-----------------------------------------------프레임당 움직임
 		rotationcache++;
 		balllaunched = 1;
 		if (50 >= (Bally + 150)) {// 화면 내에서 떨어졌을때 애니메이션 멈추는 장치----------------------------------보완 필요 !!!!!!!!!
